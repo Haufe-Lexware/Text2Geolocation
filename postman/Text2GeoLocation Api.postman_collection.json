@@ -1,0 +1,72 @@
+{
+	"info": {
+		"_postman_id": "7b5c72c3-9be4-4dcf-a135-f9f46024a9ef",
+		"name": "Text2GeoLocation Api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"_postman_id": "0cedec77-f381-42db-9f50-807edd1f56fc",
+			"name": "ds",
+			"item": [
+				{
+					"_postman_id": "a38cf68c-a977-4c57-91ff-1c6552539611",
+					"name": "coordinates",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Berlin\",\n  \"country\": \"de\"\n}"
+						},
+						"url": {
+							"raw": "{{localhost}}/coordinates",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"coordinates"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "cadc1698-d6e4-4a80-a3e9-012a6dd4de2d",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "c9328a1a-667b-486e-891c-fc486b6a4a1f",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "dc4d2367-1024-4255-9e9c-dc2cbadc6127",
+			"key": "localhost",
+			"value": "http://127.0.0.1:8080",
+			"type": "string"
+		}
+	]
+}
