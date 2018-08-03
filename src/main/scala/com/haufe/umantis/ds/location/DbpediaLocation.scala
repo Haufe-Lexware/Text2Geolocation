@@ -96,12 +96,12 @@ object DbpediaLocation extends Location {
       case None => ;
     }
 
-    // let's try in the German server
-    if (language != "de")
-      doQuery(cleanUpPlace, country, "de") match {
-      case Some(r) => return Some(r);
-      case None => ;
-    }
+//    // let's try in the German server
+//    if (language != "de")
+//      doQuery(cleanUpPlace, country, "de") match {
+//      case Some(r) => return Some(r);
+//      case None => ;
+//    }
 
     // not looking good. let's try with all the subwords of the query
     val possibleLocations = place
@@ -164,6 +164,8 @@ object DbpediaLocation extends Location {
               langFilter: String = "",
               locationFilter: String = baseContainsFilter):
   Option[GeoLocation] = {
+//    println(s"${locations.mkString(" ")}, $countryCode, $language, $langFilter, ")
+
     val query = createQuery(locations, language, locationFilter, langFilter, language)
     val solutions = queryServer(query, language)
     processSolutions(solutions, countryCode)
