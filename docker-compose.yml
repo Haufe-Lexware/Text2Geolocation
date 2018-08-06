@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  text2geolocation:
+    build: target/docker/
+    image: text2geolocation
+    hostname: text2geolocation
+    networks:
+      - ds
+    expose:
+      - 80
+    ports:
+      - 8101:80
+
+networks:
+  ds:
+    external: true

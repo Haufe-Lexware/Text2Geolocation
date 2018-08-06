@@ -53,6 +53,6 @@ object Api {
       .serve[Application.Json](coordinates)
       .toService
 
-    Http.server.serve(":8080", service)
+    Http.server.serve(":80", service)
   }
 }

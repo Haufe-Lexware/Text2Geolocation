@@ -23,10 +23,33 @@ libraryDependencies += "org.scalactic" %% "scalactic" % "3.0.5"
 logBuffered in Test := false
 
 // REST api
-// REST api
 // https://mvnrepository.com/artifact/com.github.finagle/finch-core
 libraryDependencies += "com.github.finagle" %% "finch-core" % "0.22.0"
 // https://mvnrepository.com/artifact/com.github.finagle/finch-circe
 libraryDependencies += "com.github.finagle" %% "finch-circe" % "0.22.0"
 // https://mvnrepository.com/artifact/io.circe/circe-generic-extras
 libraryDependencies += "io.circe" %% "circe-generic-extras" % "0.10.0-M1"
+
+// sbt assembly
+val targetPath = "./target/"
+assemblyOutputPath in assembly := file(s"${targetPath}Text2Geolocation.jar")
+
+assemblyMergeStrategy in assembly := {
+  case PathList("META-INF", xs @ _*) => MergeStrategy.discard
+  case x => MergeStrategy.last
+}
+
+// sbt docker
+enablePlugins(DockerPlugin)
+
+dockerfile in docker := {
+  // The assembly task generates a fat JAR file
+  val artifact: File = assembly.value
+  val artifactTargetPath = s"$targetPath${artifact.name}"
+
+  new Dockerfile {
+    from("openjdk:8-jre")
+    add(artifact, artifactTargetPath)
+    entryPoint("java", "-jar", artifactTargetPath)
+  }
+}
