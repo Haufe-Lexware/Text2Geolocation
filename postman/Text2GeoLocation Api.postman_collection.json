@@ -6,11 +6,11 @@
 	},
 	"item": [
 		{
-			"_postman_id": "0cedec77-f381-42db-9f50-807edd1f56fc",
+			"_postman_id": "01dcc37f-f0fe-452a-b3bc-8eb0cd963c62",
 			"name": "ds",
 			"item": [
 				{
-					"_postman_id": "a38cf68c-a977-4c57-91ff-1c6552539611",
+					"_postman_id": "f8ce9e4e-6d2e-4c5d-a633-f861540d96f5",
 					"name": "coordinates",
 					"request": {
 						"method": "POST",
@@ -22,7 +22,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"name\": \"Berlin\",\n  \"country\": \"de\"\n}"
+							"raw": "{\n  \"name\": \"naples\"\n}"
 						},
 						"url": {
 							"raw": "{{localhost}}/coordinates",
@@ -63,9 +63,9 @@
 	],
 	"variable": [
 		{
-			"id": "dc4d2367-1024-4255-9e9c-dc2cbadc6127",
+			"id": "01fd6f44-ebbd-43cc-bcb5-62dc4318dcc5",
 			"key": "localhost",
-			"value": "http://127.0.0.1:8080",
+			"value": "http://127.0.0.1:8101",
 			"type": "string"
 		}
 	]
