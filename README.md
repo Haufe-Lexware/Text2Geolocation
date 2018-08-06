@@ -33,4 +33,5 @@ curl -H "Content-Type: application/json" \
 
 A Postman Api example is also included in the ```postman``` directory.
 
-
+This software is released under the terms of the GNU GPL 3 License.
+It was developed by Nicola Bova at Haufe-Umantis, Barcelona, Spain.
