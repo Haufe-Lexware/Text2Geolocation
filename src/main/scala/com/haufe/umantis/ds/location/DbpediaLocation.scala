@@ -44,7 +44,9 @@ object DbpediaLocation extends Location {
     "kr" -> "ko",
     "ae" -> "ar",
     "fr" -> "fr",
-    "se" -> "sv"
+    "se" -> "sv",
+    "us" -> "en",
+    "uk" -> "en"
     //    "jp" -> "ja", // might be forbidden in China
   ).withDefaultValue("en")
 
